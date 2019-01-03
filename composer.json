@@ -1,0 +1,44 @@
+{
+  "name": "ibrunotome/geetest-captcha-laravel",
+  "description": "Integrate Geetest Captcha with Laravel",
+  "keywords": [
+    "Geetest",
+    "Captcha",
+    "Laravel"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "ibrunotome",
+      "email": "ibrunotome@gmail.com"
+    },
+    {
+      "name": "lizhipeng",
+      "email": "mail@lzp.name"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.1.19",
+    "laravel/framework": "5.*",
+    "guzzlehttp/guzzle": "^6.3",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.1",
+    "mockery/mockery": "^1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Geetest\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Geetest\\GeetestServiceProvider"
+      ]
+    }
+  }
+}

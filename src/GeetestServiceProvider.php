@@ -54,12 +54,12 @@ class GeetestServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('geetest', function () {
-            $param = [
+            $parameters = [
                 'captchaId'  => Config::get('geetest.id'),
                 'privateKey' => Config::get('geetest.key'),
             ];
 
-            return $this->app->make(GeetestLib::class, $param);
+            return $this->app->make(GeetestLib::class, $parameters);
         });
     }
 }

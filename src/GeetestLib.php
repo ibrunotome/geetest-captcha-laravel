@@ -3,7 +3,7 @@
 namespace Geetest;
 
 use GuzzleHttp\Client;
-use League\Flysystem\Config;
+use Illuminate\Support\Facades\Config;
 
 /**
  * Class Geetest

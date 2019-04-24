@@ -40,7 +40,7 @@ return [
     | Here you can config the amount of time to keep the geetest result cached
     |
     */
-    'cache_seconds' => env('GEETEST_CACHE_SECONDS', 300)
+    'cache_seconds' => env('GEETEST_CACHE_SECONDS', 300),
 
     /*
     |--------------------------------------------------------------------------

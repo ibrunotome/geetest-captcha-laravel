@@ -28,7 +28,7 @@ trait GeetestCaptcha
         Cache::put($key, [
             'status'  => $status,
             'user_id' => $data['user_id'],
-        ], 5);
+        ], Config::get('geetest.cache_seconds', 300));
 
         return $result;
     }

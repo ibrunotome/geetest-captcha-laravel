@@ -26,16 +26,19 @@ class GeetestServiceProvider extends ServiceProvider
         Validator::extend('geetest', function () {
             $request = \request();
             $req = $request->only('geetest_key', 'geetest_challenge', 'geetest_validate', 'geetest_seccode');
-            list($geetest_key, $challenge, $validate, $seccode) = array_values($req);
+
+            [$geetest_key, $challenge, $validate, $seccode] = array_values($req);
+
             $key = sprintf(Config::get('geetest.cache_key'), $geetest_key);
             $cache = Cache::get($key);
+
             $data = [
                 'user_id'     => $cache['user_id'],
                 'client_type' => 'web',
                 'ip_address'  => $request->ip()
             ];
 
-            if ($cache['status'] === 1) {
+            if ($cache['status'] === true) {
                 $result = Geetest::successValidate($challenge, $validate, $seccode, $data);
             } else {
                 $result = Geetest::failValidate($challenge, $validate);
@@ -43,7 +46,6 @@ class GeetestServiceProvider extends ServiceProvider
 
             return $result;
         });
-
     }
 
     /**

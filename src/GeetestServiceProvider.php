@@ -45,7 +45,7 @@ class GeetestServiceProvider extends ServiceProvider
             }
 
             return $result;
-        });
+        }, 'Invalid captcha challenge. Are you human? Try again.');
     }
 
     /**
